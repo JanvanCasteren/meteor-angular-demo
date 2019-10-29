@@ -28,16 +28,49 @@ dependency on Meteor as small as possible, using the following guidelines:
 
 ## How to install and use
 - clone the repository
-- cd in to the application folder and give the command ```npm install```
-- cd into the api-folder and give the command ```meteor``` (this presumes you already have installed Meteor on your system, see https://www.meteor.com/install)
-- after meteor finished installing install the npm modules for meteor with ```meteor npm install``` (give this command inside the api folder)
-- cd back into the root folder
-- build the client side meteor bundle with ```npm run bundle-meteor-client:local```.
-- start meteor in the api folder with the command ```meteor```
-- start angular in the root folder with the command ```npm run start``` or ```ng serve```
+- open two terminals: one in the root folder and one in the api folder, make sure you have **Node, NPM  and Angular CLI 7** installed
+
+In the api folder do:
+- give the command ```meteor npm install```  (this presumes you already have installed Meteor on your system, see https://www.meteor.com/install)
+- when installation is finished give the command ```meteor``` (this will finish the setup and start the server)
+
+In the root folder you do
+- give the command ```npm install```, and after installation has finished
+- build the client side Meteor Bundle with ```npm run bundle-meteor-client:local```.
+- start angular with the command ```npm run start``` or ```ng serve```
 - the application will be running at http://localhost:4200/
 - you can login as admin user with meteoradmin / asdf1234
 
+### Main dependencies are
+- Meteor (version 1.8.1)
+- Angular (version 7.2, version 8 uses rxjs version 6.4 which does not play well with meteor-rxjs)
+- Meteor-rxjs (version 1.4.1)
+- meteor-client-bundler
+- angular2-meteor-polyfills
+- meteor-node-stubs
+- various @type packages (see both package.json files)
+
+The following imports are included in the main entry files of the client application (src/main.ts and src/test.ts)
+```
+import { Meteor } from 'meteor/meteor';
+import 'angular2-meteor-polyfills';
+import './meteor-bundles/meteor-client.local';
+```
+
+The last two dependencies (angular2-meteor-polyfills and meteor-node-stubs) are taken over from other projects. I didn't check 
+yet if and why they are really needed. 
+
+### Typescript
+The most difficult part in setting up this project was getting rid of typescript complaining about dependencies.
+I have taken ideas and input from various sides until I finally had a version that would compile. Unfortunately,
+I didn't exactly note down which steps I followed to arrive there. At least some of the parts are:
+
+ - include @types/meteor only in Meteor's package.json and not in Angular's. Angular Cli knows about meteor typings 
+ by a reference to the api-folder in ```src/typings.d.ts```;
+ - manually adding some meteor-related types in ```api/typings.d.ts```
+ 
+ 
+ 
 
 ## Use of Meteor Accounts
 
