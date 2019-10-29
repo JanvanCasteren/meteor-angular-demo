@@ -1,0 +1,18 @@
+<table>
+  <thead>
+  <tr>
+    <th>Description</th>
+    <th>Assignee</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of todos">
+    <td>{{item.description}}</td>
+    <td>{{getAssignee(item.userId)}}</td>
+    <td>{{item.status}}</td>
+    <td *ngIf="(authService.isEditor$ | async) === true && item.userId === currentUser._id && item.status === todoStatus.Pending">
+      <button (click)="finish(item._id)">finish</button></td>
+  </tr>
+  </tbody>
+</table>

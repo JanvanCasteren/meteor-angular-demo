@@ -1,0 +1,16 @@
+<form name="new_organisation_form">
+    <div class="form-line">
+        <label>Name organisation</label>
+        <input type="text"
+               [(ngModel)]="model.name"
+               name="name"
+        >
+    </div>
+    <div class="form-line">
+        <div *ngIf="error" class="error">{{error}}</div>
+        <button (click)="add()"
+                [disabled]="busy"
+        >Add
+        </button>
+    </div>
+</form>

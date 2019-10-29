@@ -1,0 +1,22 @@
+<form name="login-form">
+  <h2>Login</h2>
+  <p class="error" *ngIf="error">Login incorrect</p>
+  <div class="form-line">
+    <input class="ui-inputtext ui-widget ui-state-default ui-corner-all"
+           type="email" placeholder="email"
+           name="username"
+           [(ngModel)]="model.email">
+  </div>
+  <div class="form-line">
+    <input class="ui-inputtext ui-widget ui-state-default ui-corner-all"
+           type="password" placeholder="password"
+           name="password"
+           [(ngModel)]="model.password">
+  </div>
+  <div class="form-line">
+    <button
+              (click)="login()"
+              [disabled]="loading"
+    >login</button>
+  </div>
+</form>

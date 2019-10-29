@@ -1,0 +1,14 @@
+:host {
+  .row {
+    clear: both;
+  }
+
+  .left, .right {
+    float: left;
+    margin-bottom: 3em;
+  }
+
+  .left {
+    width: 300px;
+  }
+}

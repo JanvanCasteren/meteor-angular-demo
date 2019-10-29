@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.4",
+    "@types/meteor": "1.4.14",
+    "@types/meteor-roles": "^1.2.31",
+    "@types/mocha": "2.2.44",
+    "@types/node": "~6.0.60",
+    "bcrypt": "^3.0.6",
+    "chai": "^4.2.0",
+    "clone": "^2.1.2",
+    "jsonschema": "^1.2.4",
+    "meteor-node-stubs": "^0.4.1",
+    "meteor-rxjs": "0.4.14",
+    "rxjs": "~6.3.3",
+    "tslint": "~5.11.0",
+    "typescript": "~3.2.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "tslint-no-unused-expression-chai": "^0.1.4"
+  }
+}

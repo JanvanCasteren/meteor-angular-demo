@@ -1,0 +1,39 @@
+<form name="new_organisation_form">
+  <div class="form-line">
+    <label>Organisation</label>
+    <select name="organisation" [(ngModel)]="model.organisationId">
+      <option value=""></option>
+      <option *ngFor="let item of organisationsService.organisations$ | async"
+              [ngValue]="item._id">{{item.name}}</option>
+    </select>
+
+  </div>
+  <div class="form-line">
+    <label>User type</label>
+    <select name="type" [(ngModel)]="model.userType">
+      <option *ngFor="let item of userTypes" [ngValue]="item">{{item}}</option>
+    </select>
+  </div>
+  <div class="form-line">
+    <label>Email</label>
+    <input type="text"
+           [(ngModel)]="model.email"
+           name="name"
+    >
+  </div>
+  <div class="form-line">
+    <label>Name (optional)</label>
+    <input type="text"
+           [(ngModel)]="model.name"
+           name="name"
+    >
+  </div>
+  <div class="form-line">
+    <div *ngIf="error" class="error">{{error}}</div>
+    <div *ngIf="message" class="message">{{message}}</div>
+    <button (click)="add()"
+            [disabled]="busy"
+    >Add
+    </button>
+  </div>
+</form>

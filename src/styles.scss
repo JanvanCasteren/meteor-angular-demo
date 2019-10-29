@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+.error {
+  color: red;
+}
+
+.message {
+  color: green;
+}
+
+.form-line {
+  > label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.link-button {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  border: 1px solid black;
+}

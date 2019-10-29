@@ -1,0 +1,15 @@
+<div class="container" *ngIf="authService.isLoggedIn()">
+    <p>
+        <a *ngIf="authService.isAdmin$ | async" [routerLink]="['/']">Dashboard</a>
+    </p>
+    <p>
+        <a *ngIf="(authService.isAdmin$ | async) === false" [routerLink]="['/']">Todos</a>
+    </p>
+    <p>
+        <a *ngIf="authService.isAdmin$ | async" [routerLink]="['/administration']">Administration</a>
+    </p>
+    <br>
+    <p>
+        <a (click)="logout()" class="link-button" title="log out">Log out</a>
+    </p>
+</div>

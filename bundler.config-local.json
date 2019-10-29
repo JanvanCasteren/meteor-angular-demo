@@ -1,0 +1,16 @@
+{
+  "release": "1.8.1",
+  "runtime": {
+    "DDP_DEFAULT_CONNECTION_URL": "http://localhost:3000",
+    "ROOT_URL": "http://localhost:3000"
+  },
+  "import": [
+    "meteor-base@1.4.0",
+    "mongo@1.6.2",
+    "tracker@1.2.0",
+    "mdg:validated-method",
+    "accounts-base",
+    "accounts-password",
+    "alanning:roles"
+  ]
+}

@@ -1,0 +1,13 @@
+<table>
+    <thead>
+      <tr>
+          <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of organisationsService.organisations$ | async">
+          <td>{{item.name}}</td>
+          <td><button (click)="remove(item._id)">remove</button></td>
+      </tr>
+    </tbody>
+</table>
