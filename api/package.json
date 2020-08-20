@@ -12,7 +12,7 @@
     "@types/meteor-roles": "^1.2.31",
     "@types/mocha": "2.2.44",
     "@types/node": "~6.0.60",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "chai": "^4.2.0",
     "clone": "^2.1.2",
     "jsonschema": "^1.2.4",
